@@ -1,0 +1,38 @@
+Databricks CLI 
+
+1- Installation
+Create a virtual environment
+ python -m venv venbricks
+Activate the virtual environment
+ source venbricks/bin/activate
+Install databricks-cli by using pip
+ pip install databricks-cli
+Verify that databricks-cli has been installed
+ databricks -v or databricks version
+2- Authentication 
+2.1 Create a Databricks Personal Access Token
+ Navigate to the Databricks workspace and click on the Databricks username in the top right bar. From the dropdown menu, select "Settings"
+ In the "Settings" page, go to "Developer" , under "Access tokens" tab click on "Manage" and click on "Generate new token".
+ The newly generated token will be displayed. Make sure to copy it for later use, and then click "Done" to complete the process
+2.2 Create Configuration Profile
+ databricks configure --host <workspace-url> --token
+ enter the Databricks Token and it will create an entry in the .databrickscfg file
+
+3- Databricks CLI commands
+3.1 Clusters
+    databricks clusters -h 
+    databricks clusters list 
+    databricks clusters start --cluster-id < cluster-id >
+    databricks clusters stop --cluster-id < cluster-id > 
+3.2 File system
+    databricks fs -h
+    databricks fs cat < file name >
+    databricks fs mkdirs < path > 
+    databricks fs cp < path >
+3.3 Pipelines
+    databricks pipelines -h 
+    databricks pipelines list 
+    databricks pipelines list | grep < pipeline_id >
+    databricks pipelines start --pipeline-id < pipeline_id >
+    databricks pipelines start --pipeline-id < pipeline_id > --full-refresh
+    databricks pipelines edit --pipeline-id < pipeline_id > --settings example.json
