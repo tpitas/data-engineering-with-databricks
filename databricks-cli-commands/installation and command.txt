@@ -36,3 +36,16 @@ Verify that databricks-cli has been installed
     databricks pipelines start --pipeline-id < pipeline_id >
     databricks pipelines start --pipeline-id < pipeline_id > --full-refresh
     databricks pipelines edit --pipeline-id < pipeline_id > --settings example.json
+3.4 Repos
+    Commands:
+    create      Creates a repo.
+    delete      Deletes a repo.
+    get         Lists information about a repo.
+    list        Lists all available repos in the workspace.
+    update      Updates information about a repo.
+
+    Examples
+    databricks repos list
+    databricks repos create --url <url> --provider <provider> --path <path>
+    databricks repos update --repo-id <repo-id> --branch <branch>
+    databricks repos delete --repo-id <repo-id>
