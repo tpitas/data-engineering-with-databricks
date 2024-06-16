@@ -49,3 +49,24 @@ Verify that databricks-cli has been installed
     databricks repos create --url <url> --provider <provider> --path <path>
     databricks repos update --repo-id <repo-id> --branch <branch>
     databricks repos delete --repo-id <repo-id>
+3.5 Unity catalog
+    databricks unity-catalog -h
+    Commands:
+    catalogs
+    external-locations
+    lineage
+    metastores
+    permissions
+    providers
+    recipients
+    schemas
+    shares
+    storage-credentials
+    tables
+
+    Examples
+    databricks unity-catalog metastores list
+    databricks unity-catalog metastores get-summary
+    databricks unity-catalog metastores get-assignment
+    databricks unity-catalog catalogs list
+    databricks unity-catalog shares create --name tb-share 
