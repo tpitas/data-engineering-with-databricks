@@ -245,7 +245,7 @@ class DemoDataset:
 
 # COMMAND ----------
 
-data_source_uri = "dbfs:/mnt/demo_bookstore/"
+data_source_uri = "dbfs:/mnt/demo_bookstore/" # raw data previously saved on aws s3 and mounted on dbfs:/mnt/demo_bookstore/
 dataset_bookstore = "dbfs:/mnt/demo_bookstore/"
 spark.conf.set(f"dataset.bookstore", dataset_bookstore)
 checkpoint_path = "dbfs:/mnt/demo_bookstore/checkpoints"
