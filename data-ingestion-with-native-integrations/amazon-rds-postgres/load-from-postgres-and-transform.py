@@ -140,6 +140,21 @@ display(spark.table(target_table_name))
 # COMMAND ----------
 
 # MAGIC %sql
+# MAGIC -- Optimized subquery solution
+# MAGIC SELECT  an.species, an.name, an.admission_date,
+# MAGIC             an.primary_color, species_counts.species_animals
+# MAGIC FROM    animals AS an
+# MAGIC         INNER JOIN 
+# MAGIC         (   SELECT  species, COUNT(*) AS species_animals
+# MAGIC             FROM    animals
+# MAGIC             GROUP BY species
+# MAGIC         ) AS species_counts
+# MAGIC         ON an.species = species_counts.species
+# MAGIC ORDER BY    an.species , an.admission_date;
+
+# COMMAND ----------
+
+# MAGIC %sql
 # MAGIC -- Use of CTEs to find out a date 
 # MAGIC WITH filtered_animals AS
 # MAGIC ( 	SELECT 	* 
